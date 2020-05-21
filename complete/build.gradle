@@ -29,9 +29,11 @@ dependencies {
     implementation "io.micronaut:micronaut-http-client"
     implementation "io.micronaut:micronaut-http-server-netty"
     implementation "javax.annotation:javax.annotation-api"
+    implementation "io.swagger.core.v3:swagger-annotations"
     kapt platform("io.micronaut:micronaut-bom:$micronautVersion")
     kapt "io.micronaut:micronaut-inject-java"
     kapt "io.micronaut:micronaut-validation"
+    kapt "io.micronaut.configuration:micronaut-openapi:1.5.0"
     kaptTest platform("io.micronaut:micronaut-bom:$micronautVersion")
     kaptTest "io.micronaut:micronaut-inject-java"
     runtimeOnly "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.8"

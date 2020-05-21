@@ -9,12 +9,12 @@ import kotlin.test.assertEquals
 
 object HelloControllerSpec : Spek({
     describe("HelloController Suite") {
-        var embeddedServer: EmbeddedServer = ApplicationContext.run(EmbeddedServer::class.java) // <1>
-        var client: HttpClient = HttpClient.create(embeddedServer.url) // <2>
+        val embeddedServer: EmbeddedServer = ApplicationContext.run(EmbeddedServer::class.java) // <1>
+        val client: HttpClient = HttpClient.create(embeddedServer.url) // <2>
 
         it("test /hello responds Hello World") {
-            var rsp: String = client.toBlocking().retrieve("/hello")
-            assertEquals("Hello World", rsp)
+            val rsp: String = client.toBlocking().retrieve("/hello/you")
+            assertEquals("""{"firstName":"you","lastName":"LastName"}""", rsp)
         }
 
         afterGroup {
